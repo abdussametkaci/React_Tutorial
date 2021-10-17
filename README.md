@@ -430,3 +430,52 @@ My Mustang is registered in Texas.
 
 Run Code for Destructing Object: [Destruct Object](https://abdussametkaci.github.io/React_Tutorial/my-react-app/src/destructObject.html)
 
+## React ES6 Spread Operator
+### Spread Operator
+The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
+
+``` javascript
+const numbersOne = [1, 2, 3];
+const numbersTwo = [4, 5, 6];
+const numbersCombined = [...numbersOne, ...numbersTwo] // 1,2,3,4,5,6
+```
+
+The spread operator is often used in combination with destructuring.
+
+``` javascript
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const [one, two, ...rest] = numbers;
+// one -> 1
+// two -> 2
+// rest -> 3,4,5,6
+```
+
+We can use the spread operator with objects too:
+
+``` javascript
+const myVehicle = {
+  brand: 'Ford',
+  model: 'Mustang',
+  color: 'red'
+}
+
+const updateMyVehicle = {
+  type: 'car',
+  year: 2021, 
+  color: 'yellow'
+}
+
+const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+/*
+{
+    brand: "Ford"
+    color: "yellow"
+    model: "Mustang"
+    type: "car"
+    year: 2021
+}
+*/
+```
+
+**Notice the properties that did not match were combined, but the property that did match, color, was overwritten by the last object that was passed, updateMyVehicle. The resulting color is now yellow.**
