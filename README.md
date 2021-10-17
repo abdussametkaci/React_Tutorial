@@ -570,4 +570,4 @@ Here is the same example using a ternary operator:
 authenticated ? renderApp() : renderLogin();
 ```
 
-Run Code for Ternary Operator: [Ternary operator](https://abdussametkaci.github.io/React_Tutorial/my-react-app/src/ternaryOperator.html)
+Run Code for Ternary Operator: [Ternary Operator](https://abdussametkaci.github.io/React_Tutorial/my-react-app/src/ternaryOperator.html)
