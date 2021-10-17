@@ -92,23 +92,23 @@ A class created with a class inheritance inherits all the methods from another c
 
 ``` javascript
 class Car {
-constructor(name) {
-this.brand = name;
-}
+  constructor(name) {
+    this.brand = name;
+  }
 
-present() {
-return 'I have a ' + this.brand;
-}
+  present() {
+    return 'I have a ' + this.brand;
+  }
 }
 
 class Model extends Car {
-constructor(name, mod) {
-super(name);
-this.model = mod;
-}  
-show() {
-return this.present() + ', it is a ' + this.model
-}
+  constructor(name, mod) {
+    super(name);
+    this.model = mod;
+  }  
+  show() {
+      return this.present() + ', it is a ' + this.model
+  }
 }
 mycar = new Model("Ford", "Mustang");
 mycar.show();
