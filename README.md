@@ -118,6 +118,8 @@ The **super()** method refers to the parent class.
 
 By calling the **super()** method in the constructor method, we call the parent's constructor method and gets access to the parent's properties and methods.
 
-Full code: [React Classes](https://abdussametkaci.github.io/React_Tutorial/my-react-app/src/classes.html)
+Run code for classes: [React Classes](https://abdussametkaci.github.io/React_Tutorial/my-react-app/src/classes.html)
 
 Reference: [w3shools](https://www.w3schools.com/react/default.asp)
+
+## React ES6 Arrow Functions
