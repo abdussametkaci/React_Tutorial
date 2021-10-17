@@ -270,3 +270,163 @@ const x = 5.6;
 **const** is a variable that once it has been created, its value can never change.
 
 **const has a block scope.**
+
+## React ES6 Array Methods
+### Array Methods
+There are many JavaScript array methods.
+
+One of the most useful in React is the **.map()** array method.
+
+The **.map()** method allows you to run a function on each item in the array, returning a new array as the result.
+
+In React, **map()** can be used to generate lists.
+
+``` jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const myArray = ['apple', 'banana', 'orange'];
+
+const myList = myArray.map((item) => <p>{item}</p>)
+
+ReactDOM.render(myList, document.getElementById('root'));
+```
+
+Result:
+
+```
+apple
+
+banana
+
+orange
+```
+
+## React ES6 Destructuring
+### Destructuring
+To illustrate destructuring, we'll make a sandwich. Do you take everything out of the refrigerator to make your sandwich? No, you only take out the items you would like to use on your sandwich.
+
+Destructuring is exactly the same. We may have an array or object that we are working with, but we only need some of the items contained in these.
+
+Destructuring makes it easy to extract only what is needed.
+
+### Destructing Arrays
+Here is the old way of assigning array items to a variable:
+
+Before:
+
+``` javascript
+const vehicles = ['mustang', 'f-150', 'expedition'];
+
+// old way
+const car = vehicles[0];
+const truck = vehicles[1];
+const suv = vehicles[2];
+```
+
+Here is the new way of assigning array items to a variable:
+
+With destructuring:
+
+``` javascript
+const vehicles = ['mustang', 'f-150', 'expedition'];
+
+const [car, truck, suv] = vehicles;
+```
+
+If we only want the car and suv we can simply leave out the truck but keep the comma:
+
+``` javascript
+const vehicles = ['mustang', 'f-150', 'expedition'];
+
+const [car,, suv] = vehicles;
+```
+
+Destructuring comes in handy when a function returns an array:
+
+``` javascript
+function calculate(a, b) {
+  const add = a + b;
+  const subtract = a - b;
+  const multiply = a * b;
+  const divide = a / b;
+
+  return [add, subtract, multiply, divide];
+}
+
+const [add, subtract, multiply, divide] = calculate(4, 7);
+```
+
+Run Code for Destructing Array: [Destruct Array](https://abdussametkaci.github.io/React_Tutorial/my-react-app/src/destructArray.html)
+
+### Destructuring Objects
+Here is the old way of using an object inside a function:
+
+``` javascript
+const vehicleOne = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red'
+}
+
+myVehicle(vehicleOne);
+
+// old way
+function myVehicle(vehicle) {
+  const message = 'My ' + vehicle.type + ' is a ' + vehicle.color + ' ' + vehicle.brand + ' ' + vehicle.model + '.';
+}
+```
+
+Here is the new way of using an object inside a function:
+
+``` javascript
+const vehicleOne = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red'
+}
+
+myVehicle(vehicleOne);
+
+function myVehicle({type, color, brand, model}) {
+  const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+}
+```
+
+**Notice that the object properties do not have to be declared in a specific order.**
+
+We can even destructure deeply nested objects by referencing the nested object then using a colon and curly braces to again destructure the items needed from the nested object:
+
+``` javascript
+const vehicleOne = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red',
+  registration: {
+    city: 'Houston',
+    state: 'Texas',
+    country: 'USA'
+  }
+}
+
+myVehicle(vehicleOne)
+
+function myVehicle({ model, registration: { state } }) {
+  const message = 'My ' + model + ' is registered in ' + state + '.';
+}
+```
+
+Result:
+
+```
+My Mustang is registered in Texas.
+```
+
+Run Code for Destructing Object: [Destruct Object](https://abdussametkaci.github.io/React_Tutorial/my-react-app/src/destructObject.html)
+
