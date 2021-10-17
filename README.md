@@ -40,4 +40,84 @@ React only changes what needs to be changed!
 
 React finds out what changes have been made, and changes **only** what needs to be changed.
 
-You will learn the various aspects of how React does this in the rest of this tutorial.
+## React ES6 Classes
+### Classes
+ES6 introduced classes.
+
+A class is a type of function, but instead of using the keyword function to initiate it, we use the keyword class, and the properties are assigned inside a constructor() method.
+A simple class constructor:
+
+``` javascript
+class Car {
+  constructor(name) {
+    this.brand = name;
+  }
+}
+```
+
+Now you can create objects using the Car class:
+
+``` javascript
+class Car {
+  constructor(name) {
+    this.brand = name;
+  }
+}
+
+mycar = new Car("Ford");
+```
+
+### Method in Classes
+You can add your own methods in a class:
+
+``` javascript
+class Car {
+  constructor(name) {
+    this.brand = name;
+  }
+  
+  present() {
+    return 'I have a ' + this.brand;
+  }
+}
+
+mycar = new Car("Ford");
+mycar.present();
+```
+
+### Class Inheritance
+To create a class inheritance, use the extends keyword.
+
+A class created with a class inheritance inherits all the methods from another class:
+
+``` javascript
+class Car {
+constructor(name) {
+this.brand = name;
+}
+
+present() {
+return 'I have a ' + this.brand;
+}
+}
+
+class Model extends Car {
+constructor(name, mod) {
+super(name);
+this.model = mod;
+}  
+show() {
+return this.present() + ', it is a ' + this.model
+}
+}
+mycar = new Model("Ford", "Mustang");
+mycar.show();
+```
+
+The **super()** method refers to the parent class.
+
+By calling the **super()** method in the constructor method, we call the parent's constructor method and gets access to the parent's properties and methods.
+
+Full code: [React Classes](https://abdussametkaci.github.io/my-react-app/src/classes.html)
+
+Reference: [w3shools](https://www.w3schools.com/react/default.asp)
