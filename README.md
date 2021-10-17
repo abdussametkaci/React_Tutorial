@@ -547,3 +547,27 @@ import message from "./message.js";
 ```
 
 Run Code for Default Export: [Default Export](https://abdussametkaci.github.io/React_Tutorial/my-react-app/src/importNamedExport.html)
+
+## React ES6 Ternary Operator
+### Ternary Operator
+The ternary operator is a simplified conditional operator like if / else.
+
+Syntax: condition ? <expression if true> : <expression if false>
+
+Here is an example using if / else:
+
+``` javascript
+if (authenticated) {
+  renderApp();
+} else {
+  renderLogin();
+}
+```
+
+Here is the same example using a ternary operator:
+
+``` javascript
+authenticated ? renderApp() : renderLogin();
+```
+
+Run Code for Ternary Operator: [Ternary operator](https://abdussametkaci.github.io/React_Tutorial/my-react-app/src/ternaryOperator.html)
