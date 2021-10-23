@@ -1597,3 +1597,65 @@ function Football() {
 
 ReactDOM.render(<Football />, document.getElementById('root'));
 ```
+
+## React Conditional Rendering
+In React, you can conditionally render components.
+
+There are several ways to do this.
+
+### if Statement
+We can use the if JavaScript operator to decide which component to render.
+``` jsx
+function Goal(props) {
+  const isGoal = props.isGoal;
+  if (isGoal) {
+    return <MadeGoal/>;
+  }
+  return <MissedGoal/>;
+}
+
+ReactDOM.render(
+  <Goal isGoal={false} />,
+  document.getElementById('root')
+);
+```
+
+### Logical && Operator
+``` jsx
+function Garage(props) {
+  const cars = props.cars;
+  return (
+    <>
+      <h1>Garage</h1>
+      {cars.length > 0 &&
+        <h2>
+          You have {cars.length} cars in your garage.
+        </h2>
+      }
+    </>
+  );
+}
+
+const cars = ['Ford', 'BMW', 'Audi'];
+ReactDOM.render(
+  <Garage cars={cars} />,
+  document.getElementById('root')
+);
+```
+
+### Ternary Operator
+``` jsx
+function Goal(props) {
+  const isGoal = props.isGoal;
+  return (
+    <>
+      { isGoal ? <MadeGoal/> : <MissedGoal/> }
+    </>
+  );
+}
+
+ReactDOM.render(
+  <Goal isGoal={false} />,
+  document.getElementById('root')
+);
+```
