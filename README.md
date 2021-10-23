@@ -1,6 +1,8 @@
 # React_Tutorial
 Reference: [w3shools](https://www.w3schools.com/react/default.asp)
 
+You can try all code in **index.js**.
+
 ## Create React App
 The create-react-app tool is an officially supported way to create React applications.
 
@@ -761,4 +763,108 @@ Use ternary expressions instead:
 ``` javascript
 const x = 5;
 const myelement = <h1>{(x) < 10 ? "Hello" : "Goodbye"}</h1>;
+```
+
+## React Components
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
+
+Components come in two types, Class components and Function components.
+```
+In older React code bases, you may find Class components primarily used. 
+It is now suggested to use Function components along with Hooks, which 
+were added in React 16.8. There is an optional section on Class components 
+for your reference.
+```
+
+### Create Your First Component
+When creating a React component, the component's name MUST start with an upper case letter.
+
+#### Class Component
+A class component must include the **extends React.Component** statement. This statement creates an inheritance to React.Component, and gives your component access to React.Component's functions.
+
+The component also requires a **render()** method, this method returns HTML.
+``` javascript
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+```
+
+#### Function Component
+Here is the same example as above, but created using a Function component instead.
+
+A Function component also returns HTML, and behaves much the same way as a Class component, but Function components can be written using much less code, are easier to understand, and will be preferred in this tutorial.
+``` javascript
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
+}
+```
+
+### Rendering a Component
+Now your React application has a component called Car, which returns an ```<h2>``` element.
+To use this component in your application, use similar syntax as normal HTML: ```<Car />```
+``` javascript
+ReactDOM.render(<Car />, document.getElementById('root'));
+```
+
+### Props
+Components can be passed as **props**, which stands for properties.
+
+Props are like function arguments, and you send them into the component as attributes.
+``` javascript
+function Car(props) {
+  return <h2>I am a {props.color} Car!</h2>;
+}
+
+ReactDOM.render(<Car color="red"/>, document.getElementById('root'));
+```
+
+Result:
+```
+I am a red Car!
+```
+
+### Components in Components
+We can refer to components inside other components:
+``` javascript
+function Car() {
+  return <h2>I am a Car!</h2>;
+}
+
+function Garage() {
+  return (
+    <>
+      <h1>Who lives in my Garage?</h1>
+      <Car />
+    </>
+  );
+}
+
+ReactDOM.render(<Garage />, document.getElementById('root'));
+```
+
+### Components in Files
+React is all about re-using code, and it is recommended to split your components into separate files.
+
+To do that, create a new file with a **.js** file extension and put the code inside it:
+```
+Note that the filename must start with an uppercase character.
+```
+
+``` javascript
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
+}
+
+export default Car;
+```
+
+To be able to use the Car component, you have to import the file in your application.
+``` javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Car from './Car.js';
+
+ReactDOM.render(<Car />, document.getElementById('root'));
 ```
