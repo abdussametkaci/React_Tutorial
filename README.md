@@ -645,4 +645,120 @@ Display the result in the <header id="sandy"> element:
 ReactDOM.render(<p>Hallo</p>, document.getElementById('sandy'));
 ```
 
+## React JSX
+JSX stands for JavaScript XML.
 
+JSX allows us to write HTML in React.
+
+JSX makes it easier to write and add HTML in React.
+
+### Coding JSX
+JSX allows us to write HTML elements in JavaScript and place them in the DOM without any **createElement()**  and/or **appendChild()** methods.
+
+JSX converts HTML tags into react elements.
+
+You are not required to use JSX, but JSX makes it easier to write React applications.
+
+#### Example 1
+``` javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const myelement = <h1>I Love JSX!</h1>;
+
+ReactDOM.render(myelement, document.getElementById('root'));
+```
+
+#### Example 2
+``` javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const myelement = React.createElement('h1', {}, 'I do not use JSX!');
+
+ReactDOM.render(myelement, document.getElementById('root'));
+```
+
+### Expressions in JSX
+``` javascript
+const myelement = <h1>React is {5 + 5} times better with JSX</h1>;
+```
+
+### Inserting a Large Block of HTML
+To write HTML on multiple lines, put the HTML inside parentheses:
+``` javascript
+const myelement = (
+  <ul>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Cherries</li>
+  </ul>
+);
+```
+
+### One Top Level Element
+The HTML code must be wrapped in ONE top level element.
+
+So if you like to write two paragraphs, you must put them inside a parent element, like a **div** element.
+``` javascript
+const myelement = (
+  <div>
+    <p>I am a paragraph.</p>
+    <p>I am a paragraph too.</p>
+  </div>
+);
+```
+
+Note: JSX will throw an error if the HTML is not correct, or if the HTML misses a parent element.
+
+Alternatively, you can use a "fragment" to wrap multiple lines. This will prevent unnecessarily adding extra nodes to the DOM.
+
+A fragment looks like an empty HTML tag: **<></>**.
+``` javascript
+const myelement = (
+<>
+<p>I am a paragraph.</p>
+<p>I am a paragraph too.</p>
+</>
+);
+```
+
+### Elements Must be Closed
+JSX follows XML rules, and therefore HTML elements must be properly closed.
+``` javascript
+const myelement = <input type="text" />;
+```
+
+### Attribute class = className
+The **class** attribute is a much used attribute in HTML, but since JSX is rendered as JavaScript, and the **class** keyword is a reserved word in JavaScript, you are not allowed to use it in JSX.
+
+Use attribute **className** instead.
+
+JSX solved this by using **className** instead. When JSX is rendered, it translates **className** attributes into **class** attributes.
+``` javascript
+const myelement = <h1 className="myclass">Hello World</h1>;
+```
+
+### Conditions - if statements
+React supports **if** statements, but not inside JSX.
+
+To be able to use conditional statements in JSX, you should put the **if** statements outside of the JSX, or you could use a ternary expression instead:
+
+#### Option 1:
+Write if statements outside of the JSX code:
+``` javascript
+const x = 5;
+let text = "Goodbye";
+if (x < 10) {
+  text = "Hello";
+}
+
+const myelement = <h1>{text}</h1>;
+```
+
+#### Option 2:
+Use ternary expressions instead:
+``` javascript
+const x = 5;
+const myelement = <h1>{(x) < 10 ? "Hello" : "Goodbye"}</h1>;
+```
