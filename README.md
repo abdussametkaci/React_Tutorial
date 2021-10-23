@@ -1944,7 +1944,7 @@ To create an application with multiple page routes, let's first start with the f
 
 Within the **src** folder, we'll create a folder named **pages** with several files:
 
-**src\pages\**:
+src\pages\:
 
 1. **Home.js**
 2. **Blogs.js**
@@ -2029,3 +2029,6 @@ We wrap our content first with ```<Router>```.
 Anytime we link to an internal path, we will use ```<Link>``` instead of ```<a href="">```.
 
 ```<Switch>``` is similar to a JavaScript switch statement. It will conditionally render the ```<Route>``` that matches the ```<Link>``` path.
+
+## React Memo
+
