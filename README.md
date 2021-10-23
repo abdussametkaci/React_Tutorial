@@ -1926,5 +1926,15 @@ function MyForm() {
 }
 ```
 
-By making these slight changes to <textarea> and <select>, React is able to handle all input elements in the same way.
+By making these slight changes to ```<textarea>``` and ```<select>```, React is able to handle all input elements in the same way.
 
+## React Router
+Create React App doesn't include page routing.
+
+React Router is the most popular solution.
+
+### Add React Router
+To add React Router in your application, run this in the terminal from the root directory of the application:
+```
+npm i -D react-router-dom
+```
