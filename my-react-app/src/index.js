@@ -1,37 +1,25 @@
+import { useState } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Home from './pages/Home';
-import Blogs from './pages/Blogs';
-import Contact from './pages/Contact';
+import Todos from './Todos';
 
-export default function App() {
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState(['todo 1', 'todo 2']);
+
+  const increment = () => {
+    setCount((c) => c + 1);
+  };
+
   return (
-    <Router>
-      <div>
-        <Link to="/">Home</Link>
-      </div>
-      <div>
-        <Link to="/blogs">Blog Articles</Link>
-      </div>
-      <div>
-        <Link to="/contact">Contact Me</Link>
-      </div>
-
+    <>
+      <Todos todos={todos} />
       <hr />
-
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/blogs">
-          <Blogs />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-      </Switch>
-    </Router>
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+      </div>
+    </>
   );
-}
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));
