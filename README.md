@@ -1443,3 +1443,87 @@ class Child extends React.Component {
 
 ReactDOM.render(<Container />, document.getElementById('root'));
 ```
+
+## React Props
+Props are arguments passed into React components.
+
+Props are passed to components via HTML attributes.
+```
+props stands for properties.
+```
+
+React Props are like function arguments in JavaScript and attributes in HTML.
+
+To send props into a component, use the same syntax as HTML attributes
+``` jsx
+const myelement = <Car brand="Ford" />;
+```
+
+The component receives the argument as a props object:
+``` jsx
+function Car(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+```
+
+### Pass Data
+Props are also how you pass data from one component to another, as parameters.
+
+end the "brand" property from the Garage component to the Car component:
+``` jsx
+function Car(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+
+function Garage() {
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand="Ford" />
+    </>
+  );
+}
+
+ReactDOM.render(<Garage />, document.getElementById('root'));
+```
+
+If you have a variable to send, and not a string as in the example above, you just put the variable name inside curly brackets:
+``` jsx
+function Car(props) {
+  return <h2>I am a { props.brand }!</h2>;
+}
+
+function Garage() {
+  const carName = "Ford";
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand={ carName } />
+    </>
+  );
+}
+
+ReactDOM.render(<Garage />, document.getElementById('root'));
+```
+
+Or if it was an object:,
+``` jsx
+function Car(props) {
+  return <h2>I am a { props.brand.model }!</h2>;
+}
+
+function Garage() {
+  const carInfo = { name: "Ford", model: "Mustang" };
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand={ carInfo } />
+    </>
+  );
+}
+
+ReactDOM.render(<Garage />, document.getElementById('root'));
+```
+```
+Note: React Props are read-only! You will get an error if you try to change their value.
+```
