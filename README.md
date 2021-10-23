@@ -51,7 +51,7 @@ ES6 introduced classes.
 A class is a type of function, but instead of using the keyword function to initiate it, we use the keyword class, and the properties are assigned inside a constructor() method.
 A simple class constructor:
 
-``` javascript
+``` jsx
 class Car {
   constructor(name) {
     this.brand = name;
@@ -61,7 +61,7 @@ class Car {
 
 Now you can create objects using the Car class:
 
-``` javascript
+``` jsx
 class Car {
   constructor(name) {
     this.brand = name;
@@ -74,7 +74,7 @@ mycar = new Car("Ford");
 ### Method in Classes
 You can add your own methods in a class:
 
-``` javascript
+``` jsx
 class Car {
   constructor(name) {
     this.brand = name;
@@ -94,7 +94,7 @@ To create a class inheritance, use the extends keyword.
 
 A class created with a class inheritance inherits all the methods from another class:
 
-``` javascript
+``` jsx
 class Car {
   constructor(name) {
     this.brand = name;
@@ -128,7 +128,7 @@ Run Code for Classes: [React Classes](https://abdussametkaci.github.io/React_Tut
 ### Arrow Functions
 Arrow functions allow us to write shorter function syntax:
 
-``` javascript
+``` jsx
 hello = () => {
   return "Hello World!";
 }
@@ -136,7 +136,7 @@ hello = () => {
 
 It gets shorter! If the function has only one statement, and the statement returns a value, you can remove the brackets and the return keyword:
 
-``` javascript
+``` jsx
 hello = () => "Hello World!";
 ```
 
@@ -144,13 +144,13 @@ hello = () => "Hello World!";
 
 If you have parameters, you pass them inside the parentheses:
 
-``` javascript
+``` jsx
 hello = (val) => "Hello " + val;
 ```
 
 In fact, if you have only one parameter, you can skip the parentheses as well:
 
-``` javascript
+``` jsx
 hello = val => "Hello " + val;
 ```
 
@@ -173,7 +173,7 @@ The result shows that the first example returns two different objects (window an
 
 Example: With a regular function, this represents the object that called the function:
 
-``` javascript
+``` jsx
 class Header {
   constructor() {
     this.color = "Red";
@@ -202,7 +202,7 @@ Reasult:
 
 Example: With an arrow function, this represents the Header object no matter who called the function:
 
-``` javascript
+``` jsx
 class Header {
   constructor() {
     this.color = "Red";
@@ -239,7 +239,7 @@ Now, with ES6, there are three ways of defining your variables: **var**, **let**
 
 ### var
 
-``` javascript
+``` jsx
 var x = 5.6;
 ```
 
@@ -253,7 +253,7 @@ If you use **var** inside of a block, i.e. a for loop, the variable is still ava
 
 ### let
 
-``` javascript
+``` jsx
 let x = 5.6;
 ```
 
@@ -265,7 +265,7 @@ If you use **let** inside of a block, i.e. a for loop, the variable is only avai
 
 ### const
 
-``` javascript
+``` jsx
 const x = 5.6;
 ```
 
@@ -317,7 +317,7 @@ Here is the old way of assigning array items to a variable:
 
 Before:
 
-``` javascript
+``` jsx
 const vehicles = ['mustang', 'f-150', 'expedition'];
 
 // old way
@@ -330,7 +330,7 @@ Here is the new way of assigning array items to a variable:
 
 With destructuring:
 
-``` javascript
+``` jsx
 const vehicles = ['mustang', 'f-150', 'expedition'];
 
 const [car, truck, suv] = vehicles;
@@ -338,7 +338,7 @@ const [car, truck, suv] = vehicles;
 
 If we only want the car and suv we can simply leave out the truck but keep the comma:
 
-``` javascript
+``` jsx
 const vehicles = ['mustang', 'f-150', 'expedition'];
 
 const [car,, suv] = vehicles;
@@ -346,7 +346,7 @@ const [car,, suv] = vehicles;
 
 Destructuring comes in handy when a function returns an array:
 
-``` javascript
+``` jsx
 function calculate(a, b) {
   const add = a + b;
   const subtract = a - b;
@@ -364,7 +364,7 @@ Run Code for Destructing Array: [Destruct Array](https://abdussametkaci.github.i
 ### Destructuring Objects
 Here is the old way of using an object inside a function:
 
-``` javascript
+``` jsx
 const vehicleOne = {
   brand: 'Ford',
   model: 'Mustang',
@@ -383,7 +383,7 @@ function myVehicle(vehicle) {
 
 Here is the new way of using an object inside a function:
 
-``` javascript
+``` jsx
 const vehicleOne = {
   brand: 'Ford',
   model: 'Mustang',
@@ -403,7 +403,7 @@ function myVehicle({type, color, brand, model}) {
 
 We can even destructure deeply nested objects by referencing the nested object then using a colon and curly braces to again destructure the items needed from the nested object:
 
-``` javascript
+``` jsx
 const vehicleOne = {
   brand: 'Ford',
   model: 'Mustang',
@@ -436,7 +436,7 @@ Run Code for Destructing Object: [Destruct Object](https://abdussametkaci.github
 ### Spread Operator
 The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.
 
-``` javascript
+``` jsx
 const numbersOne = [1, 2, 3];
 const numbersTwo = [4, 5, 6];
 const numbersCombined = [...numbersOne, ...numbersTwo] // 1,2,3,4,5,6
@@ -444,7 +444,7 @@ const numbersCombined = [...numbersOne, ...numbersTwo] // 1,2,3,4,5,6
 
 The spread operator is often used in combination with destructuring.
 
-``` javascript
+``` jsx
 const numbers = [1, 2, 3, 4, 5, 6];
 
 const [one, two, ...rest] = numbers;
@@ -455,7 +455,7 @@ const [one, two, ...rest] = numbers;
 
 We can use the spread operator with objects too:
 
-``` javascript
+``` jsx
 const myVehicle = {
   brand: 'Ford',
   model: 'Mustang',
@@ -502,14 +502,14 @@ You can create named exports two ways. In-line individually, or all at once at t
 
 In-line individually:
 
-``` javascript
+``` jsx
 export const name = "Jesse"
 export const age = "40"
 ```
 
 All at once at the bottom:
 
-``` javascript
+``` jsx
 const name = "Jesse"
 const age = "40"
 
@@ -521,7 +521,7 @@ Let us create another file, named **message.js**, and use it for demonstrating d
 
 You can only have one default export in a file.
 
-``` javascript
+``` jsx
 const message = () => {
   const name = "Jesse";
   const age = "40";
@@ -537,14 +537,14 @@ You can import modules into a file in two ways, based on if they are named expor
 Named exports must be destructured using curly braces. Default exports do not.
 
 ### Import from named exports
-``` javascript
+``` jsx
 import { name, age } from "./person.js";
 ```
 
 Run Code for Named Export: [Named Export](https://abdussametkaci.github.io/React_Tutorial/my-react-app/src/importNamedExport.html)
 
 ### Import from default exports
-``` javascript
+``` jsx
 import message from "./message.js";
 ```
 
@@ -558,7 +558,7 @@ Syntax: condition ? <expression if true> : <expression if false>
 
 Here is an example using if / else:
 
-``` javascript
+``` jsx
 if (authenticated) {
   renderApp();
 } else {
@@ -568,7 +568,7 @@ if (authenticated) {
 
 Here is the same example using a ternary operator:
 
-``` javascript
+``` jsx
 authenticated ? renderApp() : renderLogin();
 ```
 
@@ -590,7 +590,7 @@ There is another folder in the root directory of your React project, named "publ
 
 You'll notice a single **<div>** in the body of this file. This is where our React application will be rendered.
 
-``` javascript
+``` jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -600,7 +600,7 @@ ReactDOM.render(<p>Hello</p>, document.getElementById('root'));
 ### The HTML Code
 The HTML code in this tutorial uses JSX which allows you to write HTML tags inside the JavaScript code:
 
-``` javascript
+``` jsx
 const myelement = (
   <table>
     <tr>
@@ -643,7 +643,7 @@ The root node can be called whatever you like:
 
 Display the result in the <header id="sandy"> element:
 
-``` javascript
+``` jsx
 ReactDOM.render(<p>Hallo</p>, document.getElementById('sandy'));
 ```
 
@@ -662,7 +662,7 @@ JSX converts HTML tags into react elements.
 You are not required to use JSX, but JSX makes it easier to write React applications.
 
 #### Example 1
-``` javascript
+``` jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -672,7 +672,7 @@ ReactDOM.render(myelement, document.getElementById('root'));
 ```
 
 #### Example 2
-``` javascript
+``` jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -682,13 +682,13 @@ ReactDOM.render(myelement, document.getElementById('root'));
 ```
 
 ### Expressions in JSX
-``` javascript
+``` jsx
 const myelement = <h1>React is {5 + 5} times better with JSX</h1>;
 ```
 
 ### Inserting a Large Block of HTML
 To write HTML on multiple lines, put the HTML inside parentheses:
-``` javascript
+``` jsx
 const myelement = (
   <ul>
     <li>Apples</li>
@@ -702,7 +702,7 @@ const myelement = (
 The HTML code must be wrapped in ONE top level element.
 
 So if you like to write two paragraphs, you must put them inside a parent element, like a **div** element.
-``` javascript
+``` jsx
 const myelement = (
   <div>
     <p>I am a paragraph.</p>
@@ -716,7 +716,7 @@ Note: JSX will throw an error if the HTML is not correct, or if the HTML misses 
 Alternatively, you can use a "fragment" to wrap multiple lines. This will prevent unnecessarily adding extra nodes to the DOM.
 
 A fragment looks like an empty HTML tag: **<></>**.
-``` javascript
+``` jsx
 const myelement = (
 <>
 <p>I am a paragraph.</p>
@@ -727,7 +727,7 @@ const myelement = (
 
 ### Elements Must be Closed
 JSX follows XML rules, and therefore HTML elements must be properly closed.
-``` javascript
+``` jsx
 const myelement = <input type="text" />;
 ```
 
@@ -737,7 +737,7 @@ The **class** attribute is a much used attribute in HTML, but since JSX is rende
 Use attribute **className** instead.
 
 JSX solved this by using **className** instead. When JSX is rendered, it translates **className** attributes into **class** attributes.
-``` javascript
+``` jsx
 const myelement = <h1 className="myclass">Hello World</h1>;
 ```
 
@@ -748,7 +748,7 @@ To be able to use conditional statements in JSX, you should put the **if** state
 
 #### Option 1:
 Write if statements outside of the JSX code:
-``` javascript
+``` jsx
 const x = 5;
 let text = "Goodbye";
 if (x < 10) {
@@ -760,7 +760,7 @@ const myelement = <h1>{text}</h1>;
 
 #### Option 2:
 Use ternary expressions instead:
-``` javascript
+``` jsx
 const x = 5;
 const myelement = <h1>{(x) < 10 ? "Hello" : "Goodbye"}</h1>;
 ```
@@ -783,7 +783,7 @@ When creating a React component, the component's name MUST start with an upper c
 A class component must include the **extends React.Component** statement. This statement creates an inheritance to React.Component, and gives your component access to React.Component's functions.
 
 The component also requires a **render()** method, this method returns HTML.
-``` javascript
+``` jsx
 class Car extends React.Component {
   render() {
     return <h2>Hi, I am a Car!</h2>;
@@ -795,7 +795,7 @@ class Car extends React.Component {
 Here is the same example as above, but created using a Function component instead.
 
 A Function component also returns HTML, and behaves much the same way as a Class component, but Function components can be written using much less code, are easier to understand, and will be preferred in this tutorial.
-``` javascript
+``` jsx
 function Car() {
   return <h2>Hi, I am a Car!</h2>;
 }
@@ -804,7 +804,7 @@ function Car() {
 ### Rendering a Component
 Now your React application has a component called Car, which returns an ```<h2>``` element.
 To use this component in your application, use similar syntax as normal HTML: ```<Car />```
-``` javascript
+``` jsx
 ReactDOM.render(<Car />, document.getElementById('root'));
 ```
 
@@ -812,7 +812,7 @@ ReactDOM.render(<Car />, document.getElementById('root'));
 Components can be passed as **props**, which stands for properties.
 
 Props are like function arguments, and you send them into the component as attributes.
-``` javascript
+``` jsx
 function Car(props) {
   return <h2>I am a {props.color} Car!</h2>;
 }
@@ -827,7 +827,7 @@ I am a red Car!
 
 ### Components in Components
 We can refer to components inside other components:
-``` javascript
+``` jsx
 function Car() {
   return <h2>I am a Car!</h2>;
 }
@@ -852,7 +852,7 @@ To do that, create a new file with a **.js** file extension and put the code ins
 Note that the filename must start with an uppercase character.
 ```
 
-``` javascript
+``` jsx
 function Car() {
   return <h2>Hi, I am a Car!</h2>;
 }
@@ -861,10 +861,585 @@ export default Car;
 ```
 
 To be able to use the Car component, you have to import the file in your application.
-``` javascript
+``` jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Car from './Car.js';
 
 ReactDOM.render(<Car />, document.getElementById('root'));
+```
+
+## React Class Components
+Before React 16.8, Class components were the only way to track state and lifecycle on a React component. Function components were considered "state-less".
+
+With the addition of Hooks, Function components are now almost equivalent to Class components. The differences are so minor that you will probably never need to use a Class component in React.
+
+Even though Function components are preferred, there are no current plans on removing Class components from React.
+
+### Create a Class Component
+When creating a React component, the component's name must start with an upper case letter.
+
+The component has to include the extends React.Component statement, this statement creates an inheritance to React.Component, and gives your component access to React.Component's functions.
+
+The component also requires a render() method, this method returns HTML.
+``` jsx
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+```
+
+### Component Constructor
+If there is a constructor() function in your component, this function will be called when the component gets initiated.
+
+The constructor function is where you initiate the component's properties.
+
+In React, component properties should be kept in an object called **state**.
+
+The constructor function is also where you honor the inheritance of the parent component by including the **super()** statement, which executes the parent component's constructor function, and your component has access to all the functions of the parent component (**React.Component**).
+``` jsx
+class Car extends React.Component {
+  constructor() {
+    super();
+    this.state = {color: "red"};
+  }
+  render() {
+    return <h2>I am a {this.state.color} Car!</h2>; // I am a red Car!
+  }
+}
+```
+
+### Props
+Another way of handling component properties is by using **props**.
+
+Props are like function arguments, and you send them into the component as attributes.
+``` jsx
+class Car extends React.Component {
+  render() {
+    return <h2>I am a {this.props.color} Car!</h2>;
+  }
+}
+
+ReactDOM.render(<Car color="red"/>, document.getElementById('root'));
+```
+
+### Props in the Constructor
+If your component has a constructor function, the props should always be passed to the constructor and also to the React.Component via the **super()** method.
+``` jsx
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <h2>I am a {this.props.model}!</h2>;
+  }
+}
+// I am a Mustang!
+ReactDOM.render(<Car model="Mustang"/>, document.getElementById('root'));
+```
+
+### Components in Components
+``` jsx
+class Car extends React.Component {
+  render() {
+    return <h2>I am a Car!</h2>;
+  }
+}
+
+class Garage extends React.Component {
+  render() {
+    return (
+      <div>
+      <h1>Who lives in my Garage?</h1>
+      <Car />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Garage />, document.getElementById('root'));
+```
+
+### React Class Component State
+React Class components have a built-in **state** object.
+
+You might have noticed that we used **state** earlier in the component constructor section.
+
+The **state** object is where you store property values that belongs to the component.
+
+When the **state** object changes, the component re-renders.
+
+### Creating the state Object
+The state object is initialized in the constructor:
+``` jsx
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  render() {
+    return (
+      <div>
+        <h1>My Car</h1>
+      </div>
+    );
+  }
+}
+```
+
+### Using the state Object
+Refer to the state object anywhere in the component by using the this.state.propertyname syntax:
+``` jsx
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  render() {
+    return (
+      <div>
+        <h1>My {this.state.brand}</h1>
+        <p>
+          It is a {this.state.color}
+          {this.state.model}
+          from {this.state.year}.
+        </p>
+      </div>
+    );
+  }
+}
+```
+
+Result:
+```
+My Ford -> <h1>
+It is a red Mustang from 1964. -> <p>
+```
+
+### Changing the state Object
+To change a value in the state object, use the **this.setState()** method.
+
+When a value in the **state** object changes, the component will re-render, meaning that the output will change according to the new value(s).
+``` jsx
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  changeColor = () => {
+    this.setState({color: "blue"});
+  }
+  render() {
+    return (
+      <div>
+        <h1>My {this.state.brand}</h1>
+        <p>
+          It is a {this.state.color}
+          {this.state.model}
+          from {this.state.year}.
+        </p>
+        <button
+          type="button"
+          onClick={this.changeColor}
+        >Change color</button>
+      </div>
+    );
+  }
+}
+```
+```
+Note: Always use the setState() method to change the state object, it will 
+ensure that the component knows its been updated and calls the render() 
+method (and all the other lifecycle methods).
+```
+
+### Lifecycle of Components
+Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
+
+The three phases are: **Mounting**, **Updating**, and **Unmounting**.
+
+### Mounting
+Mounting means putting elements into the DOM.
+
+React has four built-in methods that gets called, in this order, when mounting a component:
+
+1. **constructor()**
+2. **getDerivedStateFromProps()**
+3. **render()**
+4. **componentDidMount()**
+
+The **render()** method is required and will always be called, the others are optional and will be called if you define them.
+
+#### constructor
+The **constructor()** method is called before anything else, when the component is initiated, and it is the natural place to set up the initial **state** and other initial values.
+
+The **constructor()** method is called with the **props**, as arguments, and you should always start by calling the **super(props)** before anything else, this will initiate the parent's constructor method and allows the component to inherit methods from its parent (**React.Component**).
+
+
+``` jsx
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+    );
+  }
+}
+// My Favorite Color is red
+ReactDOM.render(<Header />, document.getElementById('root'));
+```
+
+#### getDerivedStateFromProps
+The **getDerivedStateFromProps()** method is called right before rendering the element(s) in the DOM.
+
+This is the natural place to set the **state** object based on the initial **props**.
+
+It takes **state** as an argument, and returns an object with changes to the **state**.
+
+The example below starts with the favorite color being "red", but the **getDerivedStateFromProps()** method updates the favorite color based on the **favcol** attribute:
+``` jsx
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  static getDerivedStateFromProps(props, state) {
+    return {favoritecolor: props.favcol };
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+    );
+  }
+}
+// My Favorite Color is yellow
+ReactDOM.render(<Header favcol="yellow"/>, document.getElementById('root'));
+```
+
+#### render
+The **render()** method is required, and is the method that actually outputs the HTML to the DOM.
+``` jsx
+class Header extends React.Component {
+  render() {
+    return (
+      <h1>This is the content of the Header component</h1>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+```
+
+#### componentDidMount
+The **componentDidMount()** method is called after the component is rendered.
+
+This is where you run statements that requires that the component is already placed in the DOM.
+``` jsx
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 1000)
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+// My Favorite Color is red
+// after 1 second, then
+// My Favorite Color is yellow
+```
+
+### Updating
+The next phase in the lifecycle is when a component is updated.
+
+A component is updated whenever there is a change in the component's **state** or **props**.
+
+React has five built-in methods that gets called, in this order, when a component is updated:
+
+1. **getDerivedStateFromProps()**
+2. **shouldComponentUpdate()**
+3. **render()**
+4. **getSnapshotBeforeUpdate()**
+5. **componentDidUpdate()**
+
+The **render()** method is required and will always be called, the others are optional and will be called if you define them.
+
+#### getDerivedStateFromProps
+Also at updates the **getDerivedStateFromProps** method is called. This is the first method that is called when a component gets updated.
+
+This is still the natural place to set the **state** object based on the initial props.
+
+The example below has a button that changes the favorite color to blue, but since the **getDerivedStateFromProps()** method is called, which updates the state with the color from the favcol attribute, the favorite color is still rendered as yellow:
+``` jsx
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  static getDerivedStateFromProps(props, state) {
+    return {favoritecolor: props.favcol };
+  }
+  changeColor = () => {
+    this.setState({favoritecolor: "blue"});
+  }
+  render() {
+    return (
+      <div>
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+      <button type="button" onClick={this.changeColor}>Change color</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Header favcol="yellow"/>, document.getElementById('root'));
+/*
+This example has a button that changes the favorite color to blue,
+but since the getDerivedStateFromProps() method is called,
+the favorite color is still rendered as yellow
+(because the method updates the state
+with the color from the favcol attribute).
+*/
+```
+
+#### shouldComponentUpdate
+In the **shouldComponentUpdate()** method you can return a Boolean value that specifies whether React should continue with the rendering or not.
+
+The default value is **true**.
+
+The example below shows what happens when the **shouldComponentUpdate()** method returns **false**:
+``` jsx
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  shouldComponentUpdate() {
+    return false;
+  }
+  changeColor = () => {
+    this.setState({favoritecolor: "blue"});
+  }
+  render() {
+    return (
+      <div>
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+      <button type="button" onClick={this.changeColor}>Change color</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+```
+
+Same example as above, but this time the **shouldComponentUpdate()** method returns **true** instead:
+``` jsx
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  shouldComponentUpdate() {
+    return true;
+  }
+  changeColor = () => {
+    this.setState({favoritecolor: "blue"});
+  }
+  render() {
+    return (
+      <div>
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+      <button type="button" onClick={this.changeColor}>Change color</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+```
+
+#### render
+The **render()** method is of course called when a component gets updated, it has to re-render the HTML to the DOM, with the new changes.
+
+The example below has a button that changes the favorite color to blue:
+``` jsx
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  changeColor = () => {
+    this.setState({favoritecolor: "blue"});
+  }
+  render() {
+    return (
+      <div>
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+      <button type="button" onClick={this.changeColor}>Change color</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+```
+
+#### getSnapshotBeforeUpdate
+n the **getSnapshotBeforeUpdate()** method you have access to the **props** and **state** before the update, meaning that even after the update, you can check what the values were before the update.
+
+If the **getSnapshotBeforeUpdate()** method is present, you should also include the **componentDidUpdate()** method, otherwise you will get an error.
+
+The example below might seem complicated, but all it does is this:
+
+When the component is mounting it is rendered with the favorite color "red".
+
+When the component has been mounted, a timer changes the state, and after one second, the favorite color becomes "yellow".
+
+This action triggers the update phase, and since this component has a **getSnapshotBeforeUpdate()** method, this method is executed, and writes a message to the empty DIV1 element.
+
+Then the **componentDidUpdate()** method is executed and writes a message in the empty DIV2 element:
+``` jsx
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 1000)
+  }
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    document.getElementById("div1").innerHTML =
+    "Before the update, the favorite was " + prevState.favoritecolor;
+  }
+  componentDidUpdate() {
+    document.getElementById("div2").innerHTML =
+    "The updated favorite is " + this.state.favoritecolor;
+  }
+  render() {
+    return (
+      <div>
+        <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+        <div id="div1"></div>
+        <div id="div2"></div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+```
+
+#### componentDidUpdate
+The **componentDidUpdate** method is called after the component is updated in the DOM.
+
+The example below might seem complicated, but all it does is this:
+
+When the component is mounting it is rendered with the favorite color "red".
+
+When the component has been mounted, a timer changes the state, and the color becomes "yellow".
+
+This action triggers the update phase, and since this component has a **componentDidUpdate** method, this method is executed and writes a message in the empty DIV element:
+``` jsx
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 1000)
+  }
+  componentDidUpdate() {
+    document.getElementById("mydiv").innerHTML =
+    "The updated favorite is " + this.state.favoritecolor;
+  }
+  render() {
+    return (
+      <div>
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+      <div id="mydiv"></div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+```
+
+### Unmounting
+The next phase in the lifecycle is when a component is removed from the DOM, or unmounting as React likes to call it.
+
+React has only one built-in method that gets called when a component is unmounted:
+
+1. **componentWillUnmount()**
+
+#### componentWillUnmount
+The **componentWillUnmount** method is called when the component is about to be removed from the DOM.
+``` jsx
+class Container extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {show: true};
+  }
+  delHeader = () => {
+    this.setState({show: false});
+  }
+  render() {
+    let myheader;
+    if (this.state.show) {
+      myheader = <Child />;
+    };
+    return (
+      <div>
+      {myheader}
+      <button type="button" onClick={this.delHeader}>Delete Header</button>
+      </div>
+    );
+  }
+}
+
+class Child extends React.Component {
+  componentWillUnmount() {
+    alert("The component named Header is about to be unmounted.");
+  }
+  render() {
+    return (
+      <h1>Hello World!</h1>
+    );
+  }
+}
+
+ReactDOM.render(<Container />, document.getElementById('root'));
 ```
