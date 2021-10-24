@@ -3066,3 +3066,7 @@ function Todos() {
 
 ReactDOM.render(<Todos />, document.getElementById('root'));
 ```
+
+This is just the logic to keep track of the todo complete status.
+
+All of the logic to add, delete, and complete a todo could be contained within a single **useReducer** Hook by adding more actions.
