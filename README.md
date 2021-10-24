@@ -2142,3 +2142,133 @@ export default memo(Todos);
 ```
 
 Now the **Todos** component only re-renders when the **todos** that are passed to it through props are updated.
+
+## Styling React Using CSS
+There are many ways to style React with CSS, this tutorial will take a closer look at three common ways:
+
+1. Inline styling
+2. CSS stylesheets
+3. CSS Modules
+
+### Inline Styling
+To style an element with the inline style attribute, the value must be a JavaScript object:
+``` jsx
+const Header = () => {
+  return (
+    <>
+      <h1 style={{color: "red"}}>Hello Style!</h1>
+      <p>Add a little style!</p>
+    </>
+  );
+}
+```
+
+```
+Note: In JSX, JavaScript expressions are written inside curly braces, and 
+since JavaScript objects also use curly braces, the styling in the example
+above is written inside two sets of curly braces {{}}.
+```
+
+#### camelCased Property Names
+Since the inline CSS is written in a JavaScript object, properties with hyphen separators, like **background-color**, must be written with camel case syntax:
+``` jsx
+const Header = () => {
+  return (
+    <>
+      <h1 style={{backgroundColor: "lightblue"}}>Hello Style!</h1>
+      <p>Add a little style!</p>
+    </>
+  );
+}
+```
+
+#### JavaScript Object
+You can also create an object with styling information, and refer to it in the style attribute:
+``` jsx
+const Header = () => {
+  const myStyle = {
+    color: "white",
+    backgroundColor: "DodgerBlue",
+    padding: "10px",
+    fontFamily: "Sans-Serif"
+  };
+  return (
+    <>
+      <h1 style={myStyle}>Hello Style!</h1>
+      <p>Add a little style!</p>
+    </>
+  );
+}
+```
+
+### CSS Stylesheet
+You can write your CSS styling in a separate file, just save the file with the .css file extension, and import it in your application.
+
+Create a new file called "App.css" and insert some CSS code in it:
+``` css
+body {
+  background-color: #282c34;
+  color: white;
+  padding: 40px;
+  font-family: Sans-Serif;
+  text-align: center;
+}
+```
+
+**Note**: You can call the file whatever you like, just remember the correct file extension.
+
+Import the stylesheet in your application:
+``` jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+const Header = () => {
+  return (
+    <>
+      <h1>Hello Style!</h1>
+      <p>Add a little style!.</p>
+    </>
+  );
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+```
+
+### CSS Modules
+Another way of adding styles to your application is to use CSS Modules.
+
+CSS Modules are convenient for components that are placed in separate files.
+
+**Note**: The CSS inside a module is available only for the component that imported it, and you do not have to worry about name conflicts.
+
+Create the CSS module with the **.module.css** extension, example: **my-style.module.css**.
+``` css
+/*my-style.module.css*/
+.bigblue {
+  color: DodgerBlue;
+  padding: 40px;
+  font-family: Sans-Serif;
+  text-align: center;
+}
+```
+
+``` jsx
+// Car.js
+import styles from './my-style.module.css'; 
+
+const Car = () => {
+  return <h1 className={styles.bigblue}>Hello Car!</h1>;
+}
+
+export default Car;
+```
+
+Import the component in your application:
+``` jsx
+// index.js
+import ReactDOM from 'react-dom';
+import Car from './Car.js';
+
+ReactDOM.render(<Car />, document.getElementById('root'));
+```
