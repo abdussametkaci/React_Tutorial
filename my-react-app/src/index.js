@@ -1,14 +1,28 @@
-import React from 'react';
+import { useState, useCallback } from 'react';
 import ReactDOM from 'react-dom';
-import './my-sass.scss';
+import Todos from './Todos';
 
-const Header = () => {
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
+
+  const increment = () => {
+    setCount((c) => c + 1);
+  };
+  const addTodo = useCallback(() => {
+    setTodos((t) => [...t, 'New Todo']);
+  }, [todos]);
+
   return (
     <>
-      <h1>Hello Style!</h1>
-      <p>Add a little style!.</p>
+      <Todos todos={todos} addTodo={addTodo} />
+      <hr />
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+      </div>
     </>
   );
 };
 
-ReactDOM.render(<Header />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
