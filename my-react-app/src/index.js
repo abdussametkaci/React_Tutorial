@@ -1,25 +1,14 @@
-import { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Todos from './Todos';
+import './my-sass.scss';
 
-const App = () => {
-  const [count, setCount] = useState(0);
-  const [todos, setTodos] = useState(['todo 1', 'todo 2']);
-
-  const increment = () => {
-    setCount((c) => c + 1);
-  };
-
+const Header = () => {
   return (
     <>
-      <Todos todos={todos} />
-      <hr />
-      <div>
-        Count: {count}
-        <button onClick={increment}>+</button>
-      </div>
+      <h1>Hello Style!</h1>
+      <p>Add a little style!.</p>
     </>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Header />, document.getElementById('root'));
