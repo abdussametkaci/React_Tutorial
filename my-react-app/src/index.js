@@ -1,28 +1,17 @@
-import { useState, useCallback } from 'react';
 import ReactDOM from 'react-dom';
-import Todos from './Todos';
+import useFetch from './useFetch';
 
-const App = () => {
-  const [count, setCount] = useState(0);
-  const [todos, setTodos] = useState([]);
-
-  const increment = () => {
-    setCount((c) => c + 1);
-  };
-  const addTodo = useCallback(() => {
-    setTodos((t) => [...t, 'New Todo']);
-  }, [todos]);
+const Home = () => {
+  const [data] = useFetch('https://jsonplaceholder.typicode.com/todos');
 
   return (
     <>
-      <Todos todos={todos} addTodo={addTodo} />
-      <hr />
-      <div>
-        Count: {count}
-        <button onClick={increment}>+</button>
-      </div>
+      {data &&
+        data.map((item) => {
+          return <p key={item.id}>{item.title}</p>;
+        })}
     </>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Home />, document.getElementById('root'));
